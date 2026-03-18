@@ -17,12 +17,12 @@ class WebStack extends cdk.Stack {
           "scripts",
           "tests"
         ]
-              }),
-              memorySize: 256,
-              timeout: cdk.Duration.seconds(10),
-              environment: {
-                NODE_ENV: "production"
-              }
+      }),
+      memorySize: 256,
+      timeout: cdk.Duration.seconds(10),
+      environment: {
+        NODE_ENV: "production"
+      }
     });
 
     const functionUrl = webFunction.addFunctionUrl({
