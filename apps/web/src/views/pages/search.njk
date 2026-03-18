@@ -1,0 +1,39 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <section class="search-page" x-data="searchForm({% if search.hasQuery %}true{% else %}false{% endif %})">
+    <div class="section-heading">
+      <p class="eyebrow">Progressively enhanced search</p>
+      <h1>Search example items</h1>
+      <p class="lead">The form works as a normal page request, and HTMX upgrades it to live fragment updates.</p>
+    </div>
+
+    <form action="/search" method="get" class="search-form">
+      <label for="q">Search query</label>
+      <div class="search-controls">
+        <input
+          id="q"
+          name="q"
+          type="search"
+          value="{{ search.query }}"
+          placeholder="Try books, lambda, or tea"
+          autocomplete="off"
+          x-on:input="sync($event.target.value)"
+          hx-get="/search/results"
+          hx-trigger="input changed delay:250ms, search"
+          hx-target="#search-results"
+          hx-indicator="#search-indicator"
+          hx-push-url="false"
+        >
+        <button type="submit">Search</button>
+      </div>
+    </form>
+
+    <p id="search-indicator" class="search-indicator htmx-indicator">Updating results…</p>
+    <p class="search-tip" x-show="hasQuery">Live results are updating below without a full refresh.</p>
+
+    <section id="search-results" class="results-shell">
+      {% include "partials/search-results.njk" %}
+    </section>
+  </section>
+{% endblock %}

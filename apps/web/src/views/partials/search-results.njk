@@ -1,0 +1,17 @@
+<div class="results-header">
+  <h2>{{ search.heading }}</h2>
+  <p>{{ search.totalResults }} item{% if search.totalResults != 1 %}s{% endif %}</p>
+</div>
+
+{% if search.results.length %}
+  <ul class="results-list">
+    {% for item in search.results %}
+      <li class="result-card">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="empty-state">{{ search.emptyMessage }}</p>
+{% endif %}

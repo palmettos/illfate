@@ -1,0 +1,12 @@
+{
+  "name": "@illfate/web",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "start": "node scripts/dev.js",
+    "test": "node --test ./tests/**/*.test.js"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.4"
+  }
+}

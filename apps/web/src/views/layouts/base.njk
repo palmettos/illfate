@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.14.9/dist/cdn.min.js"></script>
+    <script defer src="/js/alpine-init.js"></script>
+  </head>
+  <body>
+    {% include "partials/header.njk" %}
+    <main class="site-main">
+      {% block content %}{% endblock %}
+    </main>
+    {% include "partials/footer.njk" %}
+  </body>
+</html>

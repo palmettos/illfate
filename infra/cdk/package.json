@@ -1,0 +1,17 @@
+{
+  "name": "@illfate/infra-cdk",
+  "private": true,
+  "scripts": {
+    "prepare:lambda": "npm install --prefix ../../apps/web --omit=dev --package-lock=false",
+    "bootstrap": "cdk bootstrap",
+    "synth": "npm run prepare:lambda && cdk synth",
+    "deploy": "npm run prepare:lambda && cdk deploy --require-approval never"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.186.0",
+    "constructs": "^10.4.2"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.1013.0"
+  }
+}

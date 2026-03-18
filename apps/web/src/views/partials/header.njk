@@ -1,0 +1,9 @@
+<header class="site-header">
+  <div class="site-width header-inner">
+    <a class="brand" href="/">illfate</a>
+    <nav>
+      <a href="/" {% if activePage == "home" %}aria-current="page"{% endif %}>Home</a>
+      <a href="/search" {% if activePage == "search" %}aria-current="page"{% endif %}>Search</a>
+    </nav>
+  </div>
+</header>
