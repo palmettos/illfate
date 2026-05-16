@@ -1,0 +1,11 @@
+{
+  "name": "illfate",
+  "private": true,
+  "scripts": {
+    "dev": "browser-sync start --server --files \"*.html,*.css,*.js\" --host localhost --port 4173 --no-open",
+    "start": "browser-sync start --server --host localhost --port 4173 --no-open"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  }
+}
